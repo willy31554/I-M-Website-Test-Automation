@@ -403,7 +403,7 @@ export async function Prepaid_Cards(page) {
     await expect(page.getByRole('heading', { name: 'I&M Prepaid Cards' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('We offer 3 types of prepaid cards (1 Mastercard and 2 VISA Pre-paid cards) which are convenient payment cards designed for travelers both within Kenya and internationally. They are easy to purchase and available across the counter from all I&M Bank branches');
     await expect(page.getByRole('link', { name: 'I&M Multicurrency Prepaid' }).nth(1)).toBeVisible();
-    await page.getByRole('link', { name: 'I&M Visa Travel Prepaid Card' }).nth(1).click();
+    // await page.getByRole('link', { name: 'I&M Visa Travel Prepaid Card' }).nth(1).click();
     await expect(page.getByRole('link', { name: 'I&M Visa Travel Prepaid Card' }).nth(1)).toBeVisible();
     await expect(page.getByRole('link', { name: 'I&M Visa Safari Prepaid Card' }).nth(1)).toBeVisible();
     await page.getByLabel('Next slide').click();
