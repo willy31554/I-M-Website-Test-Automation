@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { navigateTo, clickTopNavLinkAndAssert, verifyCarLoanFormFields, Personal_Banking_menu, fillAndSubmitForm, applyForLoan, ApplyInPerson, testRequestCallback } from '../helpers/utilities';
-import { Prepaid_Cards, testCustodialServices, testLoans, testPersonalBankingAccounts, testTransfersgovernments, testTransferslocal, testUnsecured_Personal_Loan, testWealthManagementService, test_Credit_Card, test_Debit_Card, test_Home_Loans, test_InsurancePremiumFinancing, testpersonalSavingsAccounts, testpersonalTransactionsAccounts, verifyinsurance } from '../tests/navigation.spec.ts';
+import { navigateTo, clickTopNavLinkAndAssert, verifyCarLoanFormFields, Personal_Banking_menu, fillAndSubmitForm, applyForLoan, ApplyInPerson, testRequestCallback, Prepaid_Cards, testCustodialServices, testLoans, testPersonalBankingAccounts, testTransfersgovernments, testTransferslocal, testUnsecured_Personal_Loan, testWealthManagementService, test_Credit_Card, test_Debit_Card, test_Home_Loans, test_InsurancePremiumFinancing, testpersonalSavingsAccounts, testpersonalTransactionsAccounts, verifyinsurance } from '../helpers/utilities';
+//import { Prepaid_Cards, testCustodialServices, testLoans, testPersonalBankingAccounts, testTransfersgovernments, testTransferslocal, testUnsecured_Personal_Loan, testWealthManagementService, test_Credit_Card, test_Debit_Card, test_Home_Loans, test_InsurancePremiumFinancing, testpersonalSavingsAccounts, testpersonalTransactionsAccounts, verifyinsurance } from '../tests/navigation.spec.ts';
 
 
 test('test menu  diaspora', async ({ page }) => {

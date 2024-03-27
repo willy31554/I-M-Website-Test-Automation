@@ -679,7 +679,7 @@ test('test  Personal Accounts drop down', async ({ page }) => {
 
 
 
-export async function Personal_Banking_menu(page: any) {
+async function Personal_Banking_menu(page: any) {
     await expect(page.locator('p').filter({ hasText: 'Personal Banking' }).locator('a')).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Personal Banking');
     await expect(page.locator('#menu-item-10550').getByRole('link', { name: 'Accounts' })).toBeVisible();
@@ -695,7 +695,7 @@ export async function Personal_Banking_menu(page: any) {
     await expect(page.locator('#menu-item-10549').getByRole('link', { name: 'Transfers' })).toBeVisible();
     await expect(page.locator('#menu-item-10549')).toContainText('Transfers');
 }
-export async function featurecheckAccountPage(page: any) {
+async function featurecheckAccountPage(page: any) {
     // Check visibility and text content of links
     await expect(page.getByRole('link', { name: 'Transaction Accounts' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Transaction Accounts');
@@ -709,7 +709,7 @@ export async function featurecheckAccountPage(page: any) {
     await expect(page.getByRole('link', { name: 'Select Banking' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Select Banking');
 }
-export async function testPersonalBankingAccounts(page) {
+async function testPersonalBankingAccounts(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.locator('#menu-item-12094').getByRole('link', { name: 'Personal' }).click();
     await Personal_Banking_menu(page);
@@ -772,7 +772,7 @@ export async function testPersonalBankingAccounts(page) {
     await expect(page.locator('#page-wrap-in')).toContainText('Learn More');
     await expect(page.getByRole('img', { name: 'Visa Infinite Credit Card' })).toBeVisible();
 }
-export async function testpersonalTransactionsAccounts(page) {
+async function testpersonalTransactionsAccounts(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
 
@@ -816,7 +816,7 @@ export async function testpersonalTransactionsAccounts(page) {
     await expect(page.getByRole('link', { name: 'Find out more  Club Account' }).nth(1)).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Club AccountUnrivalled gateway to a world of privileges all for just one monthly flat fee');
 }
-export async function testpersonalSavingsAccounts(page) {
+async function testpersonalSavingsAccounts(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
 
@@ -872,7 +872,7 @@ test('test personal Savings Accounts', async ({ page }) => {
 
 });
 
-export async function fillAndSubmitFormdd(page: any) {
+async function fillAndSubmitFormdd(page: any) {
     // Click on the specified div
     // await page.locator('div').filter({ hasText: 'Are you interested?Full Name*' }).nth(2).click();
 
@@ -900,7 +900,7 @@ export async function fillAndSubmitFormdd(page: any) {
     await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
     await expect(page.locator('#gform_submit_button_17')).toContainText('Submit');
 }
-export async function fillAndSubmitForm(page: any) {
+async function fillAndSubmitForm(page: any) {
     // Check visibility and text content of elements
     await expect(page.locator('#gform_17 div').filter({ hasText: 'Full Name*Email Address*' })).toBeVisible();
     await expect(page.locator('#field_17_2')).toContainText('Full Name*');
@@ -1005,7 +1005,7 @@ test('test personal Select Banking', async ({ page }) => {
 });
 
 
-export async function verifyCardLinksVisibility(page) {
+async function verifyCardLinksVisibility(page) {
     await expect(page.getByRole('link', { name: 'Credit Cards', exact: true })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Credit Cards');
     await expect(page.getByRole('link', { name: 'Debit Cards', exact: true })).toBeVisible();
@@ -1065,7 +1065,7 @@ test('test Cards', async ({ page }) => {
     await expect(page.getByRole('img', { name: 'The new I&M MasterCard' }).first()).toBeVisible();
 });
 
-export async function test_Credit_Card(page) {
+async function test_Credit_Card(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
 
@@ -1158,7 +1158,7 @@ export async function test_Credit_Card(page) {
     await page.locator('.comparison-table > div:nth-child(2)').click();
 
 }
-export async function test_Debit_Card(page) {
+async function test_Debit_Card(page) {
 
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
@@ -1230,7 +1230,7 @@ export async function test_Debit_Card(page) {
 
 
 
-export async function Prepaid_Cards(page) {
+async function Prepaid_Cards(page) {
 
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
@@ -1272,7 +1272,7 @@ test('test Prepaid Card', async ({ page }) => {
 });
 
 
-export async function verifyLoanLinksVisibility(page) {
+async function verifyLoanLinksVisibility(page) {
     await expect(page.getByRole('link', { name: 'Car | Vehicle Loan' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Car | Vehicle Loan');
     await expect(page.getByRole('link', { name: 'House | Mortgage Loan' })).toBeVisible();
@@ -1280,7 +1280,7 @@ export async function verifyLoanLinksVisibility(page) {
 }
 
 // Usage:
-export async function RequestCallBackEnter(page) {
+async function RequestCallBackEnter(page) {
     await page.goto('https://www.imbankgroup.com/ke/personal/loans/car-loans/');
     // await page.click('text=Car Loans');
 
@@ -1296,7 +1296,7 @@ test('testRequest Call BackEnter', async ({ page }) => {
     await RequestCallBackEnter(page);
 });
 
-export async function ApplyInPerson(page) {
+async function ApplyInPerson(page) {
     await page.getByRole('heading', { name: 'Apply in person' }).click();
     await expect(page.getByRole('heading', { name: 'Apply in person' })).toBeVisible();
     await expect(page.locator('#page-wrap')).toContainText('Find your nearest branch');
@@ -1320,7 +1320,7 @@ export async function ApplyInPerson(page) {
     console.log("test apply in person ")
 }
 
-export async function testRequestCallback(page) {
+async function testRequestCallback(page) {
     await expect(page.getByText('Request Call BackEnter')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Request Call Back' })).toBeVisible();
     await expect(page.locator('#page-wrap')).toContainText('Request Call Back');
@@ -1371,7 +1371,7 @@ export async function testRequestCallback(page) {
 }
 
 
-export async function applyForLoan(page) {
+async function applyForLoan(page) {
     await page.getByText('Apply for a loanEnter Contact').click();
     await page.locator('.bi').first().click();
     await expect(page.getByText('Apply for a loanEnter Contact')).toBeVisible();
@@ -1419,7 +1419,7 @@ export async function applyForLoan(page) {
     console.log("test apply loan ")
 }
 
-export async function testLoans(page) {
+async function testLoans(page) {
 
 
     const url = 'https://www.imbankgroup.com/ke/personal/loans/car-loans/';
@@ -1513,7 +1513,7 @@ export async function testLoans(page) {
     await Personal_Banking_menu(page)
 }
 
-export async function verifyCarLoanFormFields(page) {
+async function verifyCarLoanFormFields(page) {
     await expect(page.locator('form[name="carloandata"]')).toContainText('Type of loan');
     await expect(page.locator('li').filter({ hasText: 'Type of loan Loan Amount' }).getByRole('textbox')).toHaveValue('Car');
     await expect(page.locator('form[name="carloandata"] div').filter({ hasText: 'Loan Amount' }).nth(1)).toBeVisible();
@@ -1540,7 +1540,7 @@ test('test Car Loans', async ({ page }) => {
     await testLoans(page);
 });
 
-export async function verifyhomeCalculator(page) {
+async function verifyhomeCalculator(page) {
     await expect(page.getByText('Home Loan Calculator Type of')).toBeVisible();
     await expect(page.locator('form[name="homeloandata"] div').filter({ hasText: 'Type of loan' }).nth(1)).toBeVisible();
     await expect(page.locator('form[name="homeloandata"]')).toContainText('Type of loan');
@@ -1563,7 +1563,7 @@ export async function verifyhomeCalculator(page) {
 
 }
 
-export async function test_Home_Loans(page) {
+async function test_Home_Loans(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     const url = "https://www.imbankgroup.com/ke/personal/loans/home-loans/"
     await page.hover('#menu-item-12094');
@@ -1642,7 +1642,7 @@ test('test Home Loans', async ({ page }) => {
 });
 
 
-export async function testUnsecured_Personal_Loan(page) {
+async function testUnsecured_Personal_Loan(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     const url = "https://www.imbankgroup.com/ke/personal/loans/unsecured-personal-loan/"
     await page.hover('#menu-item-12094');
@@ -1694,7 +1694,7 @@ test('test Unsecured Personal loans', async ({ page }) => {
 });
 
 
-export async function testWealthManagementService(page) {
+async function testWealthManagementService(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
     await expect(page.getByRole('link', { name: 'Wealth Management Service' })).toBeVisible();
@@ -1765,7 +1765,7 @@ test('test Wealth Management Service', async ({ page }) => {
     await testWealthManagementService(page)
 
 });
-export async function testCustodialServices(page) {
+async function testCustodialServices(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
     await expect(page.locator('#menu-item-16545').getByRole('link', { name: 'Custodial Services' })).toBeVisible();
@@ -1851,14 +1851,14 @@ test('testCustodial Services', async ({ page }) => {
     await testCustodialServices(page)
 
 });
-export async function verifypersonalinsurancelink(page) {
+async function verifypersonalinsurancelink(page) {
     await expect(page.getByRole('link', { name: 'Bancassurance' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Bancassurance');
     await expect(page.getByRole('link', { name: 'Insurance Premium Financing' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Insurance Premium Financing');
 }
 
-export async function verifyinsurance(page) {
+async function verifyinsurance(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
     await page.$('text=Insurance +');
@@ -1972,7 +1972,7 @@ test('test bancassurance', async ({ page }) => {
 
 
 
-export async function test_InsurancePremiumFinancing(page) {
+async function test_InsurancePremiumFinancing(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
     await page.$('text=Insurance +');
@@ -2044,14 +2044,14 @@ export async function test_InsurancePremiumFinancing(page) {
 test('test Insurance Premium Financing', async ({ page }) => {
     await test_InsurancePremiumFinancing(page)
 });
-export async function verifypersonaltransfer(page) {
+async function verifypersonaltransfer(page) {
     await expect(page.getByRole('link', { name: 'Local & International Transfer' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Local & International Transfer');
     await expect(page.getByRole('link', { name: 'Government Payments' })).toBeVisible();
     await expect(page.locator('#page-wrap-in')).toContainText('Government Payments');
 }
 
-export async function testTransferslocal(page) {
+async function testTransferslocal(page) {
     await page.goto('https://www.imbankgroup.com/ke/');
     await page.hover('#menu-item-12094');
     await page.$('text=Transfers +');
@@ -2092,7 +2092,7 @@ export async function testTransferslocal(page) {
     await expect(page.locator('.feature-18-cta')).toBeVisible();
 }
 
-export async function testTransfersgovernments(page) {
+async function testTransfersgovernments(page) {
 
 
     await page.goto('https://www.imbankgroup.com/ke/');
@@ -2720,10 +2720,10 @@ test('test Government Payments', async ({ page }) => {
 //     await expect(page.locator('#overview')).toBeVisible();
 //     await expect(page.locator('#overview').getByRole('heading', { name: 'Trade Services' })).toBeVisible();
 //     await expect(page.locator('#overview')).toContainText('Trade Services');
-//     await expect(page.locator('#overview')).toContainText('We cover the full range of trade finance services from letters of credit and guarantees to export and import trading.');
+//     await expect(page.locator('#overview')).toContainText('We cover the full range of trade finance services from letters of credit and guarantees to  and import trading.');
 //     await expect(page.locator('div').filter({ hasText: /^Our range of Trade Finance products include:$/ })).toBeVisible();
 //     await expect(page.locator('#page-wrap-in')).toContainText('Our range of Trade Finance products include:');
-//     await expect(page.locator('#page-wrap-in')).toContainText('Letters of Credit (Import & Export)Guarantees | Bonds | Unsecured Bid BondsDocumentary Collections (Import & Export)Transactions under Export Credit Guarantee (GSM-102)program under United States Department of Agriculture');
+//     await expect(page.locator('#page-wrap-in')).toContainText('Letters of Credit (Import & )Guarantees | Bonds | Unsecured Bid BondsDocumentary Collections (Import & )Transactions under  Credit Guarantee (GSM-102)program under United States Department of Agriculture');
 //     await expect(page.locator('#page-wrap-in')).toContainText('Bill AvalizationBill/Invoice DiscountingImport Bill Refinancing2- Year LC under Global Trade Finance program(GTFP) of International Finance Corporation (IFC)');
 //     await expect(page.getByText('FeaturesCapability to offer')).toBeVisible();
 //     await expect(page.locator('#page-wrap-in')).toContainText('Features');
@@ -2737,7 +2737,7 @@ test('test Government Payments', async ({ page }) => {
 //     await expect(page.locator('#page-wrap-in')).toContainText('A dedicated Trade Finance Department provides very efficient processing and services.');
 //     await expect(page.locator('ul').filter({ hasText: 'Visit any I&M Bank branch and' })).toBeVisible();
 //     await expect(page.locator('#page-wrap-in')).toContainText('Visit any I&M Bank branch and talk to our friendly customer service representatives who will go through and understand your requirements to advise you on the most appropriate product.');
-//     await expect(page.locator('#page-wrap-in')).toContainText('Take advantage of I&M Bank’s Trade Finance Solutions and expand your import and export business.');
+//     await expect(page.locator('#page-wrap-in')).toContainText('Take advantage of I&M Bank’s Trade Finance Solutions and expand your import and  business.');
 
 //     await ApplyInPerson(page)
 //     await testRequestCallback(page)
