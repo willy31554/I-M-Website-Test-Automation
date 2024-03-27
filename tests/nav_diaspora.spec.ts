@@ -82,6 +82,7 @@ test('test Diaspora Insurance Premium Financing', async ({ page }) => {
 
 
 test('test Find An Agent', async ({ page }) => {
+    await page.goto('https://www.imbankgroup.com/ke/diaspora/find-an-agent/')
     await expect(page.getByRole('link', { name: 'Find An Agent', exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Transfers -' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Local & International Transfer' })).toBeVisible();
